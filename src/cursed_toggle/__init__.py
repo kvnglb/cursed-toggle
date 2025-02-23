@@ -1,3 +1,6 @@
+import math
+
+
 def cursed_toggle(b: bool) -> bool:
     """Toggle the boolean input `b`."""
     if type(b) is not bool:
@@ -6,7 +9,7 @@ def cursed_toggle(b: bool) -> bool:
     return bool(_cursed_toggle(b))
 
 
-def _cursed_toggle(b: bool) -> float:
+def _cursed_toggle(b: bool) -> complex:
     """Implement the core of the cursed_toggle function.
 
     Main part is excluded for proper testing. Behaviour of the function should be
@@ -18,4 +21,4 @@ def _cursed_toggle(b: bool) -> float:
     because bool(5), bool(-2), etc. will result in True.
 
     """
-    return 1 - b
+    return -(math.e**(1j * math.pi)).real + 1j**(1234567 >> 13 >> math.factorial(int((-math.e**(1j * math.pi) - math.e**(1j * math.pi) - math.e**(1j * math.pi)).real))) * b

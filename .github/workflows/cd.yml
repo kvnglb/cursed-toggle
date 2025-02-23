@@ -15,8 +15,11 @@ jobs:
   ci:
     uses: ./.github/workflows/ci.yml
 
+  readme:
+    uses: ./.github/workflows/readme.yml
+
   tag:
-    needs: ci
+    needs: [ci, readme]
     permissions:
       contents: write
     uses: ./.github/workflows/tag.yml

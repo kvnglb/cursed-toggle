@@ -9,6 +9,7 @@ on:
       - '!main'
     paths-ignore:
       - '**.md'
+      - '**/test_readme.py'
 
 permissions:
   contents: read
