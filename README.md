@@ -58,3 +58,19 @@ $$ f(b) = -e^{i\pi} + i^{1234567 >> 13 >> \left(-e^{i\pi} - e^{i\pi} - e^{i\pi}\
 ```
 f(b) = -(math.e**(1j * math.pi)).real + 1j**(1234567 >> 13 >> math.factorial(int((-math.e**(1j * math.pi) - math.e**(1j * math.pi) - math.e**(1j * math.pi)).real))) * b
 ```
+
+Enough high school math for now. Let's head over to the project structure.
+
+## `__init__.py`
+Only 1 `__init__` file is too straight forward. Why not add another 3 instead? We can start by naming them properly
+- `__init_1__.py`: The list of the init files starts with 1...
+- `__init_b__.py`: ...and continues with b...
+- `__init_Ω__.py`: ...and ends with an Omega (Ω).
+
+Well... So... Ahm... Basically `__init__.py` imports from `__init_Ω__.py`, which imports from `__init_1__.py`, which imports from `__init_b__.py`, which imports the cursed_toggle.
+
+## SSOT / SPOT
+In common enterprise IT, several sources of truth (SSOT) or several points of truth (SPOT) is a typical architecture. Since this repo should be enterprise grade, there is no chance not to implement something like that. That is why
+- `cursed_toggle_v1_deprecated.py` and
+- `cursed_toggle_v2.py`
+exist. When using the cursed_toggle library, it is randomly choosen which cursed_toggle function really is in use. Further, only a fool thinks, that v1 is no longer beeing developed.
