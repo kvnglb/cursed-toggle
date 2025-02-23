@@ -60,3 +60,7 @@ jobs:
 
     - name: Run tests
       run: poetry run python tests/test.py
+    - name: Run tests for v1
+      run: poetry run python tests/test_v1.py
+    - name: Run tests for v2
+      run: poetry run python tests/test_v2.py
