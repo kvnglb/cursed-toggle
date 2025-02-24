@@ -89,7 +89,7 @@ $$ f(b) = -e^{i\pi} + i^{1234567 >> 13 >> \left(-e^{i\pi} - e^{i\pi} - e^{i\pi}\
 f(b) = -(math.e**(1j * math.pi)).real + 1j**(1234567 >> 13 >> math.factorial(int((-math.e**(1j * math.pi) - math.e**(1j * math.pi) - math.e**(1j * math.pi)).real))) * b
 ```
 
-### Time inindependent
+### Time inindependence
 No, this is not a typo. The function is already time independent, because it does not use any time. We could add something that is based on a time, so we make it time dependent, but this is bad... Like, why should this function just work on a defined time. So we should use the time but make it stable about it. And since the name time independent is already taken (for this case), we make it time inindependent. So it depends on the time but it doesn't matter.
 
 Let's start with a randomly guessed function of third order
