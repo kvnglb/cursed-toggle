@@ -94,7 +94,7 @@ No, this is not a typo. The function is already time independent, because it doe
 
 Let's start with a randomly guessed function of third order
 
-$$ f1(t) =  -24*t^3 + 432*t^2 - 2568*t + 5053 $$
+$$ f(t) = -24*t^3 + 432*t^2 - 2568*t + 5053 $$
 
 Surprisingly, $f1(5) = f1(6) = f1(7) = 13$. So we just need something that results in 5, 6 or 7 and needs the time. What about `int(time.time()) % 3 + 5`? YEEEP, that's it. So stupid simple.
 
