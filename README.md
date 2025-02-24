@@ -96,7 +96,7 @@ Let's start with a randomly guessed function of third order
 
 $$ f_1(t) = -24 \cdot t^3 + 432 \cdot t^2 - 2568 \cdot t + 5053 $$
 
-Surprisingly, $f_1(5) = f_1(6) = f_1(7) = 13$. So we just need something that results in 5, 6 or 7 and needs the time. What about `int(time.time()) % 3 + 5`? YEEEP, that's it. So stupid simple.
+Surprisingly, $f_1(5) = f_1(6) = f_1(7) = 13$. So we just need something that results in 5, 6 or 7 and needs the time. What about `int(time.time()) % 3 + 5`? YEEEP, that's it- stupid simple.
 
 So, `13` becomes (with `t` as the current unix time as int)
 
