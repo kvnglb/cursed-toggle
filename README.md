@@ -100,7 +100,7 @@ Surprisingly, $f1(5) = f1(6) = f1(7) = 13$. So we just need something that resul
 
 So `13` becomes (with `t` as the current unix time as int)
 
-$$ f(b,t) = -e^{i\pi} + i^{1234567 >> -24*(t \mod 3+5)^3 + 432*(t \mod 3)^2 - 2568*(t \mod 3) + 5053 >> \left(-e^{i\pi} - e^{i\pi} - e^{i\pi}\right)!} \cdot b $$
+$$ f(b,t) = -e^{i\pi} + i^{1234567 >> -24*(t \mod 3+5)^3 + 432*(t \mod 3+5)^2 - 2568*(t \mod 3+5) + 5053 >> \left(-e^{i\pi} - e^{i\pi} - e^{i\pi}\right)!} \cdot b $$
 ```
 f(b,t) = -(math.e**(1j * math.pi)).real + 1j**(1234567 >> -24*(t%3+5)**3 + 432*(t%3+5)**2 - 2568*(t%3+5) + 5053 >> math.factorial(int((-math.e**(1j * math.pi) - math.e**(1j * math.pi) - math.e**(1j * math.pi)).real))) * b
 ```
