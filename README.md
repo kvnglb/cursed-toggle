@@ -28,7 +28,7 @@ Only 1 `__init__` file is too straight forward. Why not add another 3 instead? W
 
 Well... So... Ahm... Basically `__init__.py` imports from `__init_Ω__.py`[^1], which imports from `__init_1__.py`, which imports from `__init_b__.py`, which imports the cursed_toggle.
 
-[^1] Note from the author: I am not sure whether I should be impressed or frightened, especially when `__init__.py` in Spyder looks like that `from .__init_Î©__ [...]`.
+[^1]: Note from the author: I am not sure whether I should be impressed or frightened, especially when `__init__.py` in Spyder looks like that `from .__init_Î©__ [...]`.
 TODO: rename `__init_1__.py` to `1)__init__.py` and make it somehow work. Maybe with importlib?
 
 ## SSOT / SPOT
