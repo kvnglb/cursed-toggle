@@ -40,7 +40,7 @@ In common enterprise IT, several sources of truth (SSOT) or several points of tr
 
 exist. When using the cursed_toggle library, it is randomly choosen which cursed_toggle function will be used. Even if this looks a bit stupid, it is very important that all possible imports work. That's why there is proper testing. Further, only a fool thinks, that v1 is no longer beeing developed.
 
-When accidentally - yes "accidentally" - a new `cursed_toggle....py` is created, make sure to implement this new implementation. Just add the possibility for the import to `__init_b__.py`. Just follow the scheme, it is self-explanatory.
+When accidentally - yes "accidentally" - a new `cursed_toggle....py` is created, make sure to implement this new implementation. Just add the possibility for the import to `__init_b__.py`. Just follow the scheme, it is self-explanatory. ALSO DONT FORGET THE README!
 
 ## Testing
 All `cursed_toggle....py` must be tested. If a new `cursed_toggle....py` is created, don't forget the to test it.
