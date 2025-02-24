@@ -20,7 +20,7 @@ f(b) = 1 - b
 and this sounds like a good start.
 
 # The complication
-## `__init__.py`
+## Initception
 Only 1 `__init__` file is too straight forward. Why not add another 3 instead? We can start by naming them properly
 - `__init_1__.py`: The list of the init files starts with 1...
 - `__init_b__.py`: ...and continues with b...
@@ -35,7 +35,7 @@ TODO: rename `__init_1__.py` to `1)__init__.py` and make it somehow work. Maybe 
 In common enterprise IT, several sources of truth (SSOT) or several points of truth (SPOT) is a typical architecture. Since this repo should be enterprise grade, there is no chance not to implement something like that. That is why
 - `cursed_toggle_v1_deprecated.py` and
 - `cursed_toggle_v2.py`
-exist. When using the cursed_toggle library, it is randomly choosen which cursed_toggle function really is in use. Even if this looks a bit stupid, it is very important that all possible imports work. That's why there is proper testing. Further, only a fool thinks, that v1 is no longer beeing developed.
+exist. When using the cursed_toggle library, it is randomly choosen which cursed_toggle function will be used. Even if this looks a bit stupid, it is very important that all possible imports work. That's why there is proper testing. Further, only a fool thinks, that v1 is no longer beeing developed.
 
 ## Midamble
 Not even sure whether this is a word. Anyway, after each modification, there should be a $\LaTeX$-like representation of the "math" and after, the correspdoning python syntax (needed for testing this readme).
