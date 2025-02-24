@@ -1,3 +1,6 @@
+import os
+
+
 def cursed_toggle(b: bool) -> bool:
     """Toggle the boolean input `b`."""
     if type(b) is not bool:
@@ -17,5 +20,9 @@ def _cursed_toggle(b: bool) -> complex:
         f(0) -> anything but 0
     because bool(5), bool(-2), etc. will result in True.
 
+    The idea: Create an odd number based on the number of the files in the
+              directory.
+
     """
-    return 1 - b
+    n = len(os.listdir()) *2+    1  # noqa
+    return eval(n*"not " + f"{b}")
