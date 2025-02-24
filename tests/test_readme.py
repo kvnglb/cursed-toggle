@@ -1,5 +1,6 @@
 import math
 import re
+import time
 import unittest
 
 
@@ -26,4 +27,5 @@ class TestCursedToggle(unittest.TestCase):
 
 
 if __name__ == "__main__":
+    t = int(time.time())
     unittest.main()
