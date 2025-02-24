@@ -94,13 +94,13 @@ No, this is not a typo. The function is already time independent, because it doe
 
 Let's start with a randomly guessed function of third order
 
-$$ f(t) = -24 \cdot t^3 + 432 \cdot t^2 - 2568 \cdot t + 5053 $$
+$$ f_1(t) = -24 \cdot t^3 + 432 \cdot t^2 - 2568 \cdot t + 5053 $$
 
-Surprisingly, $f1(5) = f1(6) = f1(7) = 13$. So we just need something that results in 5, 6 or 7 and needs the time. What about `int(time.time()) % 3 + 5`? YEEEP, that's it. So stupid simple.
+Surprisingly, $f_1(5) = f_1(6) = f_1(7) = 13$. So we just need something that results in 5, 6 or 7 and needs the time. What about `int(time.time()) % 3 + 5`? YEEEP, that's it. So stupid simple.
 
 So, `13` becomes (with `t` as the current unix time as int)
 
-$$ f(b,t) = -e^{i\pi} + i^{1234567 >> -24*(t \mod 3+5)^3 + 432*(t \mod 3+5)^2 - 2568*(t \mod 3+5) + 5053 >> \left(-e^{i\pi} - e^{i\pi} - e^{i\pi}\right)!} \cdot b $$
+$$ f(b,t) = -e^{i\pi} + i^{1234567 >> -24 \cdot (t \mod 3+5)^3 + 432 \cdot (t \mod 3+5)^2 - 2568 \cdot (t \mod 3+5) + 5053 >> \left(-e^{i\pi} - e^{i\pi} - e^{i\pi}\right)!} \cdot b $$
 ```
 f(b,t) = -(math.e**(1j * math.pi)).real + 1j**(1234567 >> -24*(t % 3+5)**3 + 432*(t % 3+5)**2 - 2568*(t % 3+5) + 5053 >> math.factorial(int((-math.e**(1j * math.pi) - math.e**(1j * math.pi) - math.e**(1j * math.pi)).real))) * b
 ```
