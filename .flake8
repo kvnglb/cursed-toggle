@@ -1,7 +1,8 @@
 [flake8]
 exclude =
     __init*__.py,
-    __pycache__/
+    __pycache__/,
+    *high_school*.py
 
 ignore =
     # Limit chars per line is obsolete

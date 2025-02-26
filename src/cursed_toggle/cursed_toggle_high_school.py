@@ -6,7 +6,7 @@ def cursed_toggle(b: bool) -> bool:
     return bool(_cursed_toggle(b))
 
 
-def _cursed_toggle(D: bool) -> complex:
+def _cursed_toggle(b: bool) -> complex:
     """Implement the core of the cursed_toggle function.
 
     Main part is excluded for proper testing. Behaviour of the function should be
@@ -18,4 +18,5 @@ def _cursed_toggle(D: bool) -> complex:
     because bool(5), bool(-2), etc. will result in True.
 
     """
+    D = b
     return -7+            8-----------------------D      -~-~D   --~-~D
