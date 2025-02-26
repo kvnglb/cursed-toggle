@@ -14,4 +14,4 @@ elif testing == "3" or (not testing and r == 3):
     from .cursed_toggle_just_a_quick_test import cursed_toggle, _cursed_toggle
 
 elif testing == "4" or (not testing and r == 4):
-    from .cursed_toggle_high_school.py import cursed_toggle, _cursed_toggle
+    from .cursed_toggle_high_school import cursed_toggle, _cursed_toggle
