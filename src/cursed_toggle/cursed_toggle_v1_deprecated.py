@@ -18,4 +18,4 @@ def _cursed_toggle(b: bool) -> complex:
     because bool(5), bool(-2), etc. will result in True.
 
     """
-    return 1 - b
+    return not b
