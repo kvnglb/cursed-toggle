@@ -35,7 +35,8 @@ TODO: rename `__init_1__.py` to `1)__init__.py` and make it somehow work. Maybe 
 ## SSOT / SPOT
 In common enterprise IT, several sources of truth (SSOT) or several points of truth (SPOT) is a typical architecture. Since this repo should be enterprise grade, there is no chance not to implement something like that. That is why
 - `cursed_toggle_v1_deprecated.py` and
-- `cursed_toggle_v2.py`
+- `cursed_toggle_v2.py` and
+- `cursed_toggle_just_a_temp_little_experiment.py`
 
 exist. When using the cursed_toggle library, it is randomly choosen which cursed_toggle function will be used. Even if this looks a bit stupid, it is very important that all possible imports work. That's why there is proper testing. Further, only a fool thinks, that v1 is no longer beeing developed.
 
