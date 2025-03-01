@@ -26,11 +26,29 @@ Only 1 `__init__` file is too straight forward. Why not add another 3 instead? W
 - `__init_b__.py`: ...and continues with b...
 - `__init_Ω__.py`: ...and ends with an Omega (Ω) (Wow, this even makes sense, pathetic!)
 
-Well... So... Ahm... Basically `__init__.py` imports from `__init_Ω__.py`[^1], which imports from `__init_1__.py`, which imports from `__init_b__.py`, which contains the cursed_toggle.
+Well... So... Ahm... Basically `__init__.py` imports from `__init_Ω__.py`[^1], which imports from `__init_1__.py`, which imports from `__init_b__.py`, which imports the cursed_toggle.
 
 [^1]: Note from the author: I am not sure whether I should be impressed or frightened, especially when `__init__.py` in Spyder looks like that `from .__init_Î©__ [...]`.
 
 TODO: rename `__init_1__.py` to `1)__init__.py` and make it somehow work. Maybe with importlib?
+
+## SSOT / SPOT
+In common enterprise IT, several sources of truth (SSOT) or several points of truth (SPOT) is a typical architecture. Since this repo should be enterprise grade, there is no chance not to implement something like that. That is why
+- `cursed_toggle_v1_deprecated.py` and
+- `cursed_toggle_v2.py`
+
+exist. When using the cursed_toggle library, it is randomly choosen which cursed_toggle function will be used. Even if this looks a bit stupid, it is very important that all possible imports work. That's why there is proper testing. Further, only a fool thinks, that v1 is no longer beeing developed.
+
+When accidentally - yes "accidentally" - a new `cursed_toggle....py` is created, make sure to implement this new implementation. Just add the possibility for the import to `__init_b__.py`. Just follow the scheme, it is self-explanatory. ALSO DONT FORGET THE README!
+
+## Testing
+All `cursed_toggle....py` must be tested. If a new `cursed_toggle....py` is created, don't forget the to test it.
+1) Copy a test file from tests/. But don't choose `test.py`, copy another file.
+1) Rename the copied file that one can associate it with its corresponding `cursed_toggle....py` file.
+1) Change the line for the env variable `SECRET_ENV_FOR_TESTING_ONLY_DO_NOT_USE` so that it fits to the `__init_b__.py`. This is self-explanatory.
+1) Add the test to ci.yml. This is self-explanatory.
+
+With this method, when the overall tests change, one have to copy and paste these changes to all test files. This complies with Copy-and-paste programming philosophy.
 
 ## Midamble
 Not even sure whether this is a word. Anyway, after each modification, there should be a $\LaTeX$-like representation of the "math" and after, the correspdoning python syntax (needed for testing this readme).

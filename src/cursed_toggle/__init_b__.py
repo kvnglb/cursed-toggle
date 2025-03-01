@@ -1,24 +1,11 @@
-import math
+import os
+import random
 
+testing = os.environ.get("SECRET_ENV_FOR_TESTING_ONLY_DO_NOT_USE")
+r = random.randint(1, 2)
 
-def cursed_toggle(b: bool) -> bool:
-    """Toggle the boolean input `b`."""
-    if type(b) is not bool:
-        raise TypeError("Argument `b` must be Boolean.")
+if testing == "1" or (not testing and r == 1):
+    from .cursed_toggle_v1_deprecated import cursed_toggle, _cursed_toggle
 
-    return bool(_cursed_toggle(b))
-
-
-def _cursed_toggle(b: bool) -> complex:
-    """Implement the core of the cursed_toggle function.
-
-    Main part is excluded for proper testing. Behaviour of the function should be
-        f(1) -> 0
-        f(0) -> 1
-    But with a bool conversion in the return, it would be sufficient that
-        f(1) -> 0
-        f(0) -> anything but 0
-    because bool(5), bool(-2), etc. will result in True.
-
-    """
-    return -(math.e**(1j * math.pi)).real + 1j**(1234567 >> 13 >> math.factorial(int((-math.e**(1j * math.pi) - math.e**(1j * math.pi) - math.e**(1j * math.pi)).real))) * b
+elif testing == "2" or (not testing and r == 2):
+    from .cursed_toggle_v2 import cursed_toggle, _cursed_toggle
