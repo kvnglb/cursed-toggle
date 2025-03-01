@@ -20,10 +20,22 @@ f(b) = 1 - b
 and this sounds like a good start.
 
 # The complication
+## Initception
+Only 1 `__init__` file is too straight forward. Why not add another 3 instead? We can start by naming them properly
+- `__init_1__.py`: The list of the init files starts with 1...
+- `__init_b__.py`: ...and continues with b...
+- `__init_Ω__.py`: ...and ends with an Omega (Ω) (Wow, this even makes sense, pathetic!)
+
+Well... So... Ahm... Basically `__init__.py` imports from `__init_Ω__.py`[^1], which imports from `__init_1__.py`, which imports from `__init_b__.py`, which contains the cursed_toggle.
+
+[^1]: Note from the author: I am not sure whether I should be impressed or frightened, especially when `__init__.py` in Spyder looks like that `from .__init_Î©__ [...]`.
+
+TODO: rename `__init_1__.py` to `1)__init__.py` and make it somehow work. Maybe with importlib?
+
 ## Midamble
 Not even sure whether this is a word. Anyway, after each modification, there should be a $\LaTeX$-like representation of the "math" and after, the correspdoning python syntax (needed for testing this readme).
 
-## The complication, take 2. Or take 1?. We should satisfy both index people. Take 2, Take 1, Take 0, Go!
+## The toggle function
 The start function looks too negative and too simple. Let's make it positve and more complex, because $i^2 = -1$
 
 $$ f(b) = 1 + i^2 \cdot b $$

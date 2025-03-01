@@ -1,4 +1,7 @@
-exclude = ["__pycache__/"]
+exclude = [
+    "__init*__.py",
+    "__pycache__/",
+    ]
 
 [lint]
 select = [
@@ -20,8 +23,8 @@ extend-select = [
     "D417",
     ]
 ignore = [
-    # Package documentation should be in the README.md
-    "D104"
+    # Module documentation should be in the README.md
+    "D100"
     ]
 
 [lint.pydocstyle]
