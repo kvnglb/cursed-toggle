@@ -66,3 +66,5 @@ jobs:
       run: poetry run python tests/test_v2.py
     - name: Run tests for just a temporary little experiment
       run: poetry run python tests/test_just_a_temp_little_experiment.py
+    - name: Run tests for the high school solution
+      run: poetry run python tests/test_high_school.py

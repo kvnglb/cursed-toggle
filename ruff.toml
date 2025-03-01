@@ -1,6 +1,7 @@
 exclude = [
     "__init*__.py",
     "__pycache__/",
+    "*high_school*.py"
     ]
 
 [lint]
