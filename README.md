@@ -88,3 +88,23 @@ $$ f(b) = -e^{i\pi} + i^{1234567 >> 13 >> \left(-e^{i\pi} - e^{i\pi} - e^{i\pi}\
 ```
 f(b) = -(math.e**(1j * math.pi)).real + 1j**(1234567 >> 13 >> math.factorial(int((-math.e**(1j * math.pi) - math.e**(1j * math.pi) - math.e**(1j * math.pi)).real))) * b
 ```
+
+### Time inindependence
+No, this is not a typo. The function is already time independent, because it does not use any time. We could add something that is based on a time, so we make it time dependent, but this is bad... Like, why should this function just work on a defined time. So we should use the time but make it stable about it. And since the name time independent is already taken (for this case), we make it time inindependent. So it depends on the time but it doesn't matter.
+
+Let's start with a randomly guessed function of third order
+
+$$ f_1(t) = -24 \cdot t^3 + 432 \cdot t^2 - 2568 \cdot t + 5053 $$
+
+Surprisingly, $f_1(5) = f_1(6) = f_1(7) = 13$. So we just need something that results in 5, 6 or 7 and needs the time. What about `int(time.time()) % 3 + 5`? YEEEP, that's it- stupid simple.
+
+So, `13` becomes (with $t$ as the current unix time as int, or more like $t$ can be any int)
+
+$$ 13(t) = -24 \cdot (t \mod 3+5)^3 + 432 \cdot (t \mod 3+5)^2 - 2568 \cdot (t \mod 3+5) + 5053 $$
+
+and the function of interest turns into
+
+$$ f(b,t) = -e^{i\pi} + i^{1234567 >> -24 \cdot (t \mod 3+5)^3 + 432 \cdot (t \mod 3+5)^2 - 2568 \cdot (t \mod 3+5) + 5053 >> \left(-e^{i\pi} - e^{i\pi} - e^{i\pi}\right)!} \cdot b $$
+```
+f(b) = -(math.e**(1j * math.pi)).real + 1j**(1234567 >> -24*(t % 3+5)**3 + 432*(t % 3+5)**2 - 2568*(t % 3+5) + 5053 >> math.factorial(int((-math.e**(1j * math.pi) - math.e**(1j * math.pi) - math.e**(1j * math.pi)).real))) * b
+```

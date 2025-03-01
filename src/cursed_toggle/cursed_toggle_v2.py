@@ -1,4 +1,5 @@
 import math
+import time
 
 
 def cursed_toggle(b: bool) -> bool:
@@ -21,4 +22,5 @@ def _cursed_toggle(b: bool) -> complex:
     because bool(5), bool(-2), etc. will result in True.
 
     """
-    return -(math.e**(1j * math.pi)).real + 1j**(1234567 >> 13 >> math.factorial(int((-math.e**(1j * math.pi) - math.e**(1j * math.pi) - math.e**(1j * math.pi)).real))) * b
+    t = int(time.time())
+    return -(math.e**(1j * math.pi)).real + 1j**(1234567 >> -24*(t % 3+5)**3 + 432*(t % 3+5)**2 - 2568*(t % 3+5) + 5053 >> math.factorial(int((-math.e**(1j * math.pi) - math.e**(1j * math.pi) - math.e**(1j * math.pi)).real))) * b
