@@ -108,3 +108,13 @@ $$ f(b,t) = -e^{i\pi} + i^{1234567 >> -24 \cdot (t \mod 3+5)^3 + 432 \cdot (t \m
 ```
 f(b) = -(math.e**(1j * math.pi)).real + 1j**(1234567 >> -24*(t % 3+5)**3 + 432*(t % 3+5)**2 - 2568*(t % 3+5) + 5053 >> math.factorial(int((-math.e**(1j * math.pi) - math.e**(1j * math.pi) - math.e**(1j * math.pi)).real))) * b
 ```
+
+### Docstring dependence
+The number `1234567` can be calculated as $3487 \cdot 354 + 169$. What a luck that the docstring of `_cursed_toggle` is 354 chars long. Easy substitution (with $d$ as length of the docstring of `_cursed_toggle`):
+
+$$ f(b,t,d_{354}) = -e^{i\pi} + i^{3487 \cdot d + 169 >> -24 \cdot (t \mod 3+5)^3 + 432 \cdot (t \mod 3+5)^2 - 2568 \cdot (t \mod 3+5) + 5053 >> \left(-e^{i\pi} - e^{i\pi} - e^{i\pi}\right)!} \cdot b $$
+```
+f(b) = -(math.e**(1j * math.pi)).real + 1j**(3487 * len(_cursed_toggle.__doc__.__str__()) + 169 >> -24*(t % 3+5)**3 + 432*(t % 3+5)**2 - 2568*(t % 3+5) + 5053 >> math.factorial(int((-math.e**(1j * math.pi) - math.e**(1j * math.pi) - math.e**(1j * math.pi)).real))) * b
+```
+
+*The `.__str__()` in `cursed_toggle.__doc__.__str__()` is to satisfy mypy.*

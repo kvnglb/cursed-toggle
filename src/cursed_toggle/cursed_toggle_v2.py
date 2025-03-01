@@ -23,4 +23,4 @@ def _cursed_toggle(b: bool) -> complex:
 
     """
     t = int(time.time())
-    return -(math.e**(1j * math.pi)).real + 1j**(1234567 >> -24*(t % 3+5)**3 + 432*(t % 3+5)**2 - 2568*(t % 3+5) + 5053 >> math.factorial(int((-math.e**(1j * math.pi) - math.e**(1j * math.pi) - math.e**(1j * math.pi)).real))) * b
+    return -(math.e**(1j * math.pi)).real + 1j**(3487 * len(_cursed_toggle.__doc__.__str__()) + 169 >> -24*(t % 3+5)**3 + 432*(t % 3+5)**2 - 2568*(t % 3+5) + 5053 >> math.factorial(int((-math.e**(1j * math.pi) - math.e**(1j * math.pi) - math.e**(1j * math.pi)).real))) * b

@@ -3,6 +3,7 @@ import re
 import time
 import unittest
 
+from cursed_toggle import _cursed_toggle
 
 with open("README.md", "r") as file:
     lines = file.read()
