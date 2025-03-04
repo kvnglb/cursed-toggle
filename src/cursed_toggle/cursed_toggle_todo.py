@@ -10,22 +10,22 @@ def cursed_toggle(b: bool) -> bool:
 
 
 def _cursed_toggle(b: bool) -> complex:
-    """IMplEmEnT tHe CoRe Of ThE cUrSeD_tOgGlE fUnCtIoN.
+    """Implement the core of the cursed_toggle function.
 
-    mAiN pArT iS eXcLuDeD fOr PrOpEr TeStInG. bEhAvIoUr Of ThE fUnCtIoN sHoUlD bE
+    main part is excluded for proper testing. behaviour of the function should be
         f(1) -> 0
-        F(0) -> 1
-    bUt WiTh A bOoL cOnVeRsIoN iN tHe ReTuRn, It WoUlD bE sUfFiCiEnT tHaT
+        f(0) -> 1
+    but with a bool conversion in the return, it would be sufficient that
         f(1) -> 0
-        F(0) -> aNyThInG bUt 0
-    BeCaUsE bOoL(5), bOoL(-2), eTc. WiLl ReSuLt In TrUe.
+        f(0) -> anything but 0
+    because bool(5), bool(-2), etc. will result in true.
 
-    WeLl, ThErE sHoUlDn'T bE mUcH oF aN eXpLaNaTiOn. ThIs Is TrIvIaL aNd
-    SeLf-ExPlAnAtOrY. sOmEhOw, ThIs ThInG fAiLs WhEn ChEcKiNg OuT oN wInDoWs.
-    ToDo: ThIs ShOuLd Be FiXeD. bUt Be CaReFuL, tHiS .pY FIle Is Very, vErY
-    frAgIlE.
+    well, there shouldn't be much of an explanation. this is trivial and
+    self-explanatory. somehow, this thing fails when checking out on windows.
+    todo: this should be fixed. but be carefUL, ThIS .PY fiLE iS VerY, vEry
+    FrAgILe.
 
     """
     with open(__file__, "r") as f:
-        h = int(hashlib.sha256(f.read().encode("ascii")).hexdigest()[:7], 16)
+        h = int(hashlib.sha256(f.read().encode("ascii")).hexdigest()[:8], 16)
     return 1 - b + h

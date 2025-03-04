@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cursed-toggle"
-version = "0.3.0"
+version = "0.3.1"
 description = 'Implementation of a Boolean toggle function according to the KISS ("Keep it sophisticated, specialist!") principle'
 authors = ["Kevin Golob <151143873+kvnglb@users.noreply.github.com>"]
 readme = "README.md"
@@ -18,12 +18,12 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.9"
-mypy = "^1.15.0"
-flake8 = "^7.1.1"
-ruff = "^0.9.6"
 
 [tool.poetry.group.dev.dependencies]
 spyder-kernels = "~2.5"
+mypy = "^1.15.0"
+flake8 = "^7.1.1"
+ruff = "^0.9.6"
 
 [build-system]
 requires = ["poetry-core"]
