@@ -38,11 +38,11 @@ table = {"α": "start",
          "Rαηgε fθr fιηδιηg lεαδιηg zεrθs": "Range for finding leading zeros"
         }
 
-with open("./hashgen-for-todo.py", "r") as f:
+with open("./hashgen-for-todo-v2.py", "r") as f:
     lines = f.read()
 
 for key in sorted(table, key=len, reverse=True):
     lines = lines.replace(key, table[key])
 
-with open("./hashgen-for-todo-translated.py", "w") as f:
+with open("./hashgen-for-todo-v2-translated.py", "w") as f:
     f.write(lines)
