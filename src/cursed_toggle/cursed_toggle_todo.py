@@ -10,7 +10,7 @@ def cursed_toggle(b: bool) -> bool:
 
 
 def _cursed_toggle(b: bool) -> complex:
-    """Implement the core of the cursed_toggle function.
+    """IMplement the core of the cursed_toggle function.
 
     main part is excluded for proper testing. behaviour of the function should be
         f(1) -> 0
@@ -21,9 +21,7 @@ def _cursed_toggle(b: bool) -> complex:
     because bool(5), bool(-2), etc. will result in true.
 
     well, there shouldn't be much of an explanation. this is trivial and
-    self-explanatory. somehow, this thing fails when checking out on windows.
-    todo: this should be fixed. but be carefUL, ThIS .PY fiLE iS VerY, vEry
-    FrAgILe.
+    self-explanatory. be carefuL, THis .py fIlE iS vERY, veRY Fragile.
 
     """
     with open(__file__, "r") as f:
