@@ -9,7 +9,7 @@ on:
       - '!main'
     paths:
       - '**.md'
-      - '**/test_readme.py'
+      - '**/test_README.py'
 
 permissions:
   contents: read
@@ -31,4 +31,4 @@ jobs:
         poetry install
 
     - name: Run tests for readme
-      run: poetry run python tests/test_readme.py
+      run: poetry run python tests/test_README.py

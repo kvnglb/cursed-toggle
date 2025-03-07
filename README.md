@@ -1,25 +1,14 @@
 # cursed-toggle
 This library is intended to implement a toggle function for Boolean values in a very bad or even the worst and most unmaintainable way, following the KISS ("Keep it sophisticated, specialist!") principle.
 
-# Preamble
-The variable `b` can be True (1) or False (0). One of the most basic implementation to get a toggle is
-```
-f(b) = not b
-```
+## SemVer
+This projects is SemVer (**S**coped for **E**xclusive **M**anagement **Ver**sioning) compliant and is applied the following way `a.b.c`, with:
+- `a` should be increased, when a new (backward compatible) feature is implemented (like making this module CLI capable)
+- `b` is the number of the several sources of truth (see section SSOT). This should be the number of files starting with `cursed_toggle` in [src/cursed_toggle](src/cursed_toggle)
+- `c` should be increased, when there are small changes on existing code (like bugfixes or improvements)
 
-But this is way too simple and efficient and something cooler looking might be
-```
-f(b) = b^1
-```
+If a change breaks existing code (like upgrading to this new version results in also changing the code that imports this library), `a` is calculated with $a_{n+1} = -(a_n + 1)$. So there is the fictional version 3.23.5 and a change in the code will break the stuff that imports the cursed toggle. The new version is `-4.23.0`. Then a new backwards compatible feature is implemented, the version will be `-5.23.0`. Make some improvements `-5.23.1`, add another source of truth `-5.24.0` and finally do something that breaks existing code again `6.24.0`. The idea should be clear now and needs no further explanation.
 
-A trivial linear function is also possible
-```
-f(b) = 1 - b
-```
-
-and this sounds like a good start.
-
-# The complication
 ## Initception
 Only 1 `__init__` file is too straight forward. Why not add another 3 instead? We can start by naming them properly
 - `__init_1__.py`: The list of the init files starts with 1...
@@ -53,10 +42,29 @@ All `cursed_toggle....py` must be tested. If a new `cursed_toggle....py` is crea
 
 With this method, when the overall tests change, one have to copy and paste these changes to all test files. This complies with Copy-and-paste programming philosophy.
 
+# The toggle function
+## Prerequisite
+The variable `b` can be True (1) or False (0). One of the most basic implementation to get a toggle is
+```
+f(b) = not b
+```
+
+But this is way too simple and efficient and something cooler looking might be
+```
+f(b) = b^1
+```
+
+A trivial linear function is also possible
+```
+f(b) = 1 - b
+```
+
+and this sounds like a good start.
+
 ## Midamble
 Not even sure whether this is a word. Anyway, after each modification, there should be a $\LaTeX$-like representation of the "math" and after, the correspdoning python syntax (needed for testing this readme).
 
-## The toggle function
+## The complication
 The start function looks too negative and too simple. Let's make it positve and more complex, because $i^2 = -1$
 
 $$ f(b) = 1 + i^2 \cdot b $$

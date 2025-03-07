@@ -9,7 +9,7 @@ on:
       - '!main'
     paths-ignore:
       - '**.md'
-      - '**/test_readme.py'
+      - '**/test_README.py'
 
 permissions:
   contents: read
@@ -60,6 +60,8 @@ jobs:
 
     - name: Run tests
       run: poetry run python tests/test.py
+    - name: Run tests for CLI application
+      run: poetry run python tests/test_CLI.py
     - name: Run tests for v1
       run: poetry run python tests/test_v1.py
     - name: Run tests for v2

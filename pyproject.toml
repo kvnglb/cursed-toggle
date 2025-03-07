@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cursed-toggle"
-version = "0.3.2"
+version = "1.5.0"
 description = 'Implementation of a Boolean toggle function according to the KISS ("Keep it sophisticated, specialist!") principle'
 authors = ["Kevin Golob <151143873+kvnglb@users.noreply.github.com>"]
 readme = "README.md"
