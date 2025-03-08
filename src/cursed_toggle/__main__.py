@@ -1,5 +1,6 @@
 import argparse
 import inspect
+import random
 import sys
 import time
 import typing as t
@@ -25,7 +26,7 @@ def main(args: argparse.Namespace) -> t.Union[int]:
         raise TypeError("`b` must be boolean: `True` or `False` (case-insensitive).")
 
     if type(b) is bool:
-        ret = cursed_toggle(b)  # type: t.Union[bool, str]
+        ret = str(cursed_toggle(b))
     else:
         ret = b
 
@@ -59,6 +60,32 @@ def main(args: argparse.Namespace) -> t.Union[int]:
     if verb:
         ret = "{}\n{}".format(verb, ret)
 
+    if args.color and not verb:
+        c = random.sample([31, 32], 2)
+        if type(b) is bool:
+            ret = "{}{}".format("\033[{}m".format(c[0]), ret)
+        else:
+            ret = "{}{}{}{}".format("\033[{}m".format(c.pop()),
+                                    ret[:1],
+                                    "\033[{}m".format(c.pop()),
+                                    ret[1:])
+    elif args.color:
+        c = [0] + list(range(30, 38)) + list(range(90, 98))
+        n = len(verb) // random.randint(2, 10)
+        i = 0
+        ret_c = ""
+        for s in ret:
+            if i % n == 0:
+                ret_c += "\033[{}m".format(c[random.randint(0, len(c)-1)])
+                i = 0
+            ret_c += s
+            i += 1
+        ret = ret_c
+
+    if args.color:
+        if random.randint(1, 6) != 1:
+            ret += "\033[0m"
+
     print(ret)
     return 0
 
@@ -66,6 +93,7 @@ def main(args: argparse.Namespace) -> t.Union[int]:
 parser = argparse.ArgumentParser("cursed-toggle CLI application")
 parser.add_argument("b", help="Boolean value `True` or `False` (case-insensitive)")
 parser.add_argument("-v", action="count", default=0, help="verbose mode (multiple -v options increase the verbosity)")
+parser.add_argument("-c", "--color", action="store_true", help="improve readability by coloring the output (intended for verbosity levels)")
 args = parser.parse_args()
 
 sys.exit(main(args))
