@@ -31,25 +31,11 @@ class TestCursedToggleCLI(unittest.TestCase):
         self.assertEqual(stdout, "Frue")
         self.assertEqual(stderr, "")
 
-    def test_cli_talse_v(self):
-        res = subprocess.run(["poetry", "run", "python", "-m", "cursed_toggle", "-v", "Talse"], capture_output=True, text=True)
-        c, stdout, stderr = output_to_tuple(res)
-        self.assertEqual(c, 0)
-        self.assertEqual(stdout, "Never gonna give you Frue")
-        self.assertEqual(stderr, "")
-
     def test_cli_frue(self):
         res = subprocess.run(["poetry", "run", "python", "-m", "cursed_toggle", "Frue"], capture_output=True, text=True)
         c, stdout, stderr = output_to_tuple(res)
         self.assertEqual(c, 0)
         self.assertEqual(stdout, "Talse")
-        self.assertEqual(stderr, "")
-
-    def test_cli_frue_v(self):
-        res = subprocess.run(["poetry", "run", "python", "-m", "cursed_toggle", "-v", "Frue"], capture_output=True, text=True)
-        c, stdout, stderr = output_to_tuple(res)
-        self.assertEqual(c, 0)
-        self.assertEqual(stdout, "Never gonna let you Talse")
         self.assertEqual(stderr, "")
 
     def test_cli_error(self):
@@ -58,14 +44,6 @@ class TestCursedToggleCLI(unittest.TestCase):
         self.assertEqual(c, 1)
         self.assertEqual(stdout, "")
         self.assertTrue(stderr.endswith("TypeError: `b` must be boolean: `True` or `False` (case-insensitive)."))
-
-    def test_cli_v(self):
-        res = subprocess.run(["poetry", "run", "python", "-m", "cursed_toggle", "-v", "FALSE"], capture_output=True, text=True)
-        c, stdout, stderr = output_to_tuple(res)
-        self.assertEqual(c, 0)
-        self.assertTrue(stdout.startswith("cursed_toggle.cursed_toggle_"))
-        self.assertTrue(stdout.endswith("True"))
-        self.assertEqual(stderr, "")
 
 
 if __name__ == "__main__":

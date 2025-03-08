@@ -1,9 +1,10 @@
 import argparse
+import inspect
 import sys
 import time
 import typing as t
 
-from cursed_toggle import cursed_toggle
+from cursed_toggle import _cursed_toggle, cursed_toggle
 
 
 def main(args: argparse.Namespace) -> t.Union[int]:
@@ -28,23 +29,37 @@ def main(args: argparse.Namespace) -> t.Union[int]:
     else:
         ret = b
 
-    if args.v == 0:
-        print(ret)
-    elif args.v == 1:
-        print("{} {}".format(module_name, ret))
-    elif args.v == 2:
-        print("{} {} {}".format(time.strftime("%Y"), module_name, ret))
-    elif args.v == 3:
-        print("{} {} {}".format(time.strftime("%Y-%m"), module_name, ret))
-    elif args.v == 4:
-        print("{} {} {}".format(time.strftime("%Y-%m-%d"), module_name, ret))
-    elif args.v == 5:
-        print("{} {} {}".format(time.strftime("%Y-%m-%d %H"), module_name, ret))
-    elif args.v == 6:
-        print("{} {} {}".format(time.strftime("%Y-%m-%d %H:%M"), module_name, ret))
-    elif args.v >= 7:
-        print("{} {} {}".format(time.strftime("%Y-%m-%d %H:%M:%S"), module_name, ret))
+    verb = ""
+    if args.v >= 1:
+        verb = "module name: {}".format(module_name)
 
+    if args.v == 2:
+        verb = "current date: {}\n".format(time.strftime("%Y")) + verb
+    elif args.v == 3:
+        verb = "current date: {}\n".format(time.strftime("%Y-%m")) + verb
+    elif args.v >= 4:
+        verb = "current date: {}\n".format(time.strftime("%Y-%m-%d")) + verb
+
+    if args.v == 5:
+        verb = "current time: {}\n".format(time.strftime("%H")) + verb
+    elif args.v == 6:
+        verb = "current time: {}\n".format(time.strftime("%H:%M")) + verb
+    elif args.v >= 7:
+        verb = "current time: {}\n".format(time.strftime("%H:%M:%S")) + verb
+
+    if args.v >= 8:
+        verb += "\n\nsource function\n"
+        verb += 15*"=" + "\n"
+        if type(b) is not str:
+            verb += "{}\n".format(inspect.getsource(_cursed_toggle))
+        else:
+            verb += 10*"Error" + "\n"
+        verb += 15*"="
+
+    if verb:
+        ret = "{}\n{}".format(verb, ret)
+
+    print(ret)
     return 0
 
 
