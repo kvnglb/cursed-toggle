@@ -32,7 +32,7 @@ def main(args: argparse.Namespace) -> t.Union[int]:
 
     verb = ""
     if args.v >= 1:
-        verb = "module name: {}".format(module_name)
+        verb = "source: {}".format(module_name)
 
     if args.v == 2:
         verb = "current date: {}\n".format(time.strftime("%Y")) + verb

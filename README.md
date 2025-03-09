@@ -1,6 +1,46 @@
 # cursed-toggle
 This library is intended to implement a toggle function for Boolean values in a very bad or even the worst and most unmaintainable way, following the KISS ("Keep it sophisticated, specialist!") principle.
 
+# Getting started
+## Examples
+### Import
+```python
+>>> from cursed_toggle import cursed_toggle as ct
+
+>>> b = ct(False)
+>>> print(b)
+True
+
+>>> c = ct(b)
+>>> print(c)
+False
+```
+
+### CLI
+```
+$ python -m cursed_toggle true
+False
+```
+
+There are also several layers of verbosity
+```
+$ python -m cursed_toggle true -v
+source: cursed_toggle.cursed_toggle_v2
+False
+```
+
+Or just run
+```
+python -m cursed_toggle --help
+```
+to get all supported switches.
+
+## Installation
+```
+pip install cursed-toggle
+```
+
+# Description
 ## SemVer
 This projects is SemVer (**S**coped for **E**xclusive **M**anagement **Ver**sioning) compliant and is applied the following way `a.b.c`, with:
 - `a` should be increased, when a new (backward compatible) feature is implemented (like making this module CLI capable)
